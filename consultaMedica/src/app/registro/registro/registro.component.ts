@@ -11,7 +11,8 @@ export class RegistroComponent implements OnInit {
   tpdocumento: tipodocumentoEntity={};
   selectedeps!: string;
   tpeps: epsEntity={};
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit(): void {
   }

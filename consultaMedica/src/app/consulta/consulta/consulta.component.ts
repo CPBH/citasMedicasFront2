@@ -13,6 +13,9 @@ export class ConsultaComponent implements OnInit {
   ngOnInit(): void {
   }
   showFiller = false;
+  clearForm(){
+    
+  }
   save(event:any){
 
   }

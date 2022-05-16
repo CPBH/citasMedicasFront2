@@ -66,7 +66,7 @@ import {MatMenuModule} from '@angular/material/menu';
     MatRadioModule,
     MatDialogModule,
     MatExpansionModule,
-    MatMenuModule
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

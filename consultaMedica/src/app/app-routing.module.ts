@@ -8,6 +8,7 @@ import { OpcionservicioComponent } from './opcionservicio/opcionservicio/opcions
 import { RegistroComponent } from './registro/registro/registro.component';
 import { TipoafiliadoComponent } from './tipoafiliado/tipoafiliado/tipoafiliado.component';
 
+
 const routes: Routes = [
   {
     path: 'login', component: IniciosesionComponent
