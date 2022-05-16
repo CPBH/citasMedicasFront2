@@ -1,1 +1,55 @@
-<p>cita works!</p>
+<form class="form">
+    <mat-card class="card">
+        <mat-card-header class="card-header">
+            <mat-card-title>&nbsp; Cita Medica
+            </mat-card-title>
+        </mat-card-header>
+    </mat-card>
+    <div class="row">
+        <div class="col">
+            <mat-form-field class="full-width myfield">
+                <mat-label>Tipo de Documento*</mat-label>
+                <select matNativeControl (ngModel)="selectedtipodocumento" name="tpd">
+                  <option value="" selected></option>
+                  <option *ngFor="let item of tipodocumentos" [value]="item.value">
+                    {{item.viewValue}}
+                  </option>
+                </select>
+            </mat-form-field>
+        </div>
+        <div class="col">
+            <mat-form-field class="full-width myfield">
+                <mat-label>Numero de Documento*</mat-label>
+                <input matInput>
+            </mat-form-field>
+        </div>
+        <div class="col">
+            <mat-form-field class="full-width myfield">
+                <mat-label>Tipo cita</mat-label>
+                <select matNativeControl (ngModel)="selectedtipocita" name="tpc">
+                  <option value="" selected></option>
+                  <option *ngFor="let item of tipocitas" [value]="item.value">
+                    {{item.viewValue}}
+                  </option>
+                </select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <mat-form-field style="width: 50%;">
+                <input matInput type="datetime-local" placeholder="Fecha hora requerida para el servicio(*)">
+            </mat-form-field>
+        </div>
+    </div>
+    <mat-card-actions style="display: flex; justify-content: center;">
+        <div>
+            <button type="submit" mat-raised-button class="btn-submit" matTooltip="Guardar" (click)="save($event)">
+              <mat-icon>save</mat-icon>Guardar
+            </button>
+            <button type="submit" mat-raised-button class="btn-submit" matTooltip="Limpiar" (click)="clearForm() ">
+              <mat-icon>clear</mat-icon>Limpiar
+            </button>
+        </div>
+    </mat-card-actions>
+</form>

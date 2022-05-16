@@ -30,6 +30,8 @@ import { CitaComponent } from './cita/cita/cita.component';
 import { OpcionservicioComponent } from './opcionservicio/opcionservicio/opcionservicio.component';
 import { RegistroComponent } from './registro/registro/registro.component';
 import { TipoafiliadoComponent } from './tipoafiliado/tipoafiliado/tipoafiliado.component';
+import {MatMenuModule} from '@angular/material/menu';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +65,8 @@ import { TipoafiliadoComponent } from './tipoafiliado/tipoafiliado/tipoafiliado.
     MatCheckboxModule,
     MatRadioModule,
     MatDialogModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

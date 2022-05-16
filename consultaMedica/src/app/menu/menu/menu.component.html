@@ -1,1 +1,11 @@
-<p>menu works!</p>
+<mat-toolbar color="Black">
+    <button mat-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>
+    <h1 mat-dialog-title>DataPrism</h1>
+    <mat-menu #menu="matMenu">
+        <a routerLink="/login" routerLinkActive="active"><button mat-menu-item color="Black">Login</button></a>
+        <a routerLink="/cita" routerLinkActive="active"><button mat-menu-item color="Black">Citas</button></a>
+        <a routerLink="/opcionservicio" routerLinkActive="active"><button mat-menu-item color="Black">Otros servicios</button></a>
+        <a routerLink="/singup" routerLinkActive="active"><button mat-menu-item color="Black">Sing up</button></a>
+        <a routerLink="/tipoafiliado" routerLinkActive="active"><button mat-menu-item color="Black">Afiliado</button></a>
+    </mat-menu>
+</mat-toolbar>
