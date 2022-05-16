@@ -1,1 +1,83 @@
-<p>consulta works!</p>
+<mat-card class="card">
+    <mat-card-header class="card-header">
+        <mat-card-title>&nbsp; Consulta
+        </mat-card-title>
+    </mat-card-header>
+</mat-card>
+<p>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Descripción/Sintomas paciente</mat-label>
+        <textarea matInput placeholder="Escribir"></textarea>
+    </mat-form-field>
+</p>
+<mat-drawer-container class=" example-container " autosize>
+    <mat-drawer #drawer class="example-sidenav " mode="side">
+        <p>
+            <mat-card>
+                <input matInput placeholder="Dosis">
+            </mat-card>
+        </p>
+        <p>
+            <mat-card>
+                <mat-form-field appearance="fill">
+                    <mat-label>fecha de vencimiento</mat-label>
+                    <input matInput [matDatepicker]="picker">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </mat-card>
+        </p>
+        <p>
+            <mat-card>
+                <input matInput placeholder="Entrega por mes">
+            </mat-card>
+        </p>
+        <p>
+            <mat-card>
+                <input matInput placeholder="Medicamentos">
+            </mat-card>
+        </p>
+        <p>
+            <mat-card>
+                <input matInput placeholder="Descripción del tratamiento(opcional)">
+            </mat-card>
+        </p>
+        <button type="submit" mat-raised-button class="btn-submit" matTooltip="Guardar" (click)="save($event)">
+            <mat-icon>save</mat-icon>Guardar
+          </button>
+        <p *ngIf="showFiller">
+        </p>
+    </mat-drawer>
+
+    <div class="example-sidenav-content ">
+        <button type="button " mat-button (click)="drawer.toggle() ">
+        Receta
+      </button>
+    </div>
+</mat-drawer-container>
+<mat-drawer-container class=" example-container " autosize>
+    <mat-drawer #drawer class="example-sidenav " mode="side">
+        <p>
+            <mat-card>
+                <input matInput placeholder="Descripción">
+            </mat-card>
+        </p>
+        <p>
+            <mat-card>
+                <input matInput placeholder="Margen de tiempo">
+            </mat-card>
+        </p>
+        <button type="submit" mat-raised-button class="btn-submit" matTooltip="Guardar" (click)="save($event)">
+            <mat-icon>save</mat-icon>Guardar
+          </button>
+        <p *ngIf="showFiller">
+        </p>
+    </mat-drawer>
+
+    <div class="example-sidenav-content ">
+        <button type="button " mat-button (click)="drawer.toggle() ">
+        Orden Medica
+      </button>
+    </div>
+</mat-drawer-container>

@@ -7,49 +7,59 @@
     </mat-card>
     <div class="row">
         <div class="col">
-            <mat-form-field class="full-width myfield">
-                <mat-label>Tipo de Documento*</mat-label>
-                <select matNativeControl (ngModel)="selectedtipodocumento" name="tpd">
+            <mat-card>
+                <mat-form-field class="full-width myfield">
+                    <mat-label>Tipo de Documento*</mat-label>
+                    <select matNativeControl (ngModel)="tpdocumento" name="tpd">
                   <option value="" selected></option>
-                  <option *ngFor="let item of tipodocumentos" [value]="item.value">
-                    {{item.viewValue}}
+                  <option *ngFor="let item of tipodocumentos" [value]="item.codigo">
+                    {{item.descripcion}}
                   </option>
                 </select>
-            </mat-form-field>
+                </mat-form-field>
+            </mat-card>
         </div>
         <div class="col">
-            <mat-form-field class="full-width myfield">
-                <mat-label>Numero de Documento*</mat-label>
-                <input matInput>
-            </mat-form-field>
+            <mat-card>
+                <mat-form-field class="full-width myfield">
+                    <mat-label>Numero de Documento*</mat-label>
+                    <input matInput (ngModel)="cita.nmdocumentos">
+                </mat-form-field>
+            </mat-card>
         </div>
         <div class="col">
-            <mat-form-field class="full-width myfield">
-                <mat-label>Tipo cita</mat-label>
-                <select matNativeControl (ngModel)="selectedtipocita" name="tpc">
+            <mat-card>
+                <mat-form-field class="full-width myfield">
+                    <mat-label>Tipo cita</mat-label>
+                    <select matNativeControl (ngModel)="tpcita" name="tpc">
                   <option value="" selected></option>
-                  <option *ngFor="let item of tipocitas" [value]="item.value">
-                    {{item.viewValue}}
+                  <option *ngFor="let item of tipocitas" [value]="item.codigo">
+                    {{item.descripcion}}
                   </option>
                 </select>
-            </mat-form-field>
+                </mat-form-field>
+            </mat-card>
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <mat-form-field style="width: 50%;">
-                <input matInput type="datetime-local" placeholder="Fecha hora requerida para el servicio(*)">
-            </mat-form-field>
+            <mat-card>
+                <mat-form-field style="width: 50%;">
+                    <input matInput type="datetime-local" placeholder="Fecha y hora requerida para el servicio(*)">
+                </mat-form-field>
+            </mat-card>
         </div>
     </div>
-    <mat-card-actions style="display: flex; justify-content: center;">
-        <div>
-            <button type="submit" mat-raised-button class="btn-submit" matTooltip="Guardar" (click)="save($event)">
+    <mat-card>
+        <mat-card-actions style="display: flex; justify-content: center;">
+            <div>
+                <button type="submit" mat-raised-button class="btn-submit" matTooltip="Guardar" (click)="save($event)">
               <mat-icon>save</mat-icon>Guardar
             </button>
-            <button type="submit" mat-raised-button class="btn-submit" matTooltip="Limpiar" (click)="clearForm() ">
+                <button type="submit" mat-raised-button class="btn-submit" matTooltip="Limpiar" (click)="clearForm() ">
               <mat-icon>clear</mat-icon>Limpiar
             </button>
-        </div>
-    </mat-card-actions>
+            </div>
+        </mat-card-actions>
+    </mat-card>
 </form>

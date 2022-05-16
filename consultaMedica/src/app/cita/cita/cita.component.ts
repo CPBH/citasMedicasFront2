@@ -9,24 +9,29 @@ export class CitaComponent implements OnInit {
 
   selectedtipodocumento!: string;
   selectedtipocita!: string;
+  cita: citaEntity= {};
+  tpdocumento: tipodocumentoEntity={};
+  tpcita: tipocitaEntity={};
   
   constructor() { }
 
   ngOnInit(): void {
   }
   tipodocumentos: tipodocumentoEntity[] = [
-    {value: '1', viewValue: 'Cédula'},
-    {value: '2', viewValue: 'Tarjeta Identidad'},
-    {value: '3', viewValue: 'Cédula Extrangera'},
+    {codigo: '1', descripcion: 'Cédula'},
+    {codigo: '2', descripcion: 'Tarjeta Identidad'},
+    {codigo: '3', descripcion: 'Cédula Extrangera'},
   ];
 
   tipocitas: tipocitaEntity[] = [
-    {value: '1', viewValue: 'General'},
-    {value: '2', viewValue: 'Odontología'},
-    {value: '3', viewValue: 'Especializada'},
+    {codigo: '1', descripcion: 'General'},
+    {codigo: '2', descripcion: 'Odontología'},
+    {codigo: '3', descripcion: 'Especializada'},
   ];
   clearForm(){
-
+    this.cita={};
+    this.tpdocumento={};
+    this.tpcita={};
   }
   save(event:any){
 
@@ -34,11 +39,16 @@ export class CitaComponent implements OnInit {
 
 }
 interface tipodocumentoEntity {
-  value: string;
-  viewValue: string;
+  codigo?: string;
+  descripcion?: string;
 }
 
 interface tipocitaEntity {
-  value: string;
-  viewValue: string;
+  codigo?: string;
+  descripcion?: string;
+}
+
+interface citaEntity{
+  nmdocumentos?: string;
+  fecha?: string;
 }

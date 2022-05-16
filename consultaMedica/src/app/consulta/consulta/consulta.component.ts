@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsultaComponent implements OnInit {
 
+  
   constructor() { }
 
   ngOnInit(): void {
+  }
+  showFiller = false;
+  save(event:any){
+
   }
 
 }

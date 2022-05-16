@@ -1,1 +1,56 @@
-<p>registro works!</p>
+<mat-card>
+    <mat-card-title>Registrarse</mat-card-title>
+    <mat-card-content>
+        <form>
+            <p>
+                <mat-form-field class="full-width myfield">
+                    <mat-label>Tipo de Documento*</mat-label>
+                    <select matNativeControl (ngModel)="tpdocumento" name="tpd">
+                  <option value="" selected></option>
+                  <option *ngFor="let item of tipodocumentos" [value]="item.codigo">
+                    {{item.descripcion}}
+                  </option>
+                </select>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field>
+                    <input type="text" matInput placeholder="Numero de Documento">
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field>
+                    <input type="text" matInput placeholder="Nombre de usuario">
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field>
+                    <input type="password" matInput placeholder="Constraseña*">
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="fill">
+                    <mat-label>Fecha de nacimiento*</mat-label>
+                    <input matInput [matDatepicker]="picker">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field class="full-width myfield">
+                    <mat-label>EPS</mat-label>
+                    <select matNativeControl (ngModel)="tpeps" name="tpep">
+                  <option value="" selected></option>
+                  <option *ngFor="let item of eps" [value]="item.codigo">
+                    {{item.descripcion}}
+                  </option>
+                </select>
+                </mat-form-field>
+            </p>
+            <button type="submit" mat-raised-button color="primary">Aceptar</button> |
+
+            <button type="submit" mat-raised-button color="primary">Cancelar</button>
+        </form>
+    </mat-card-content>
+</mat-card>
