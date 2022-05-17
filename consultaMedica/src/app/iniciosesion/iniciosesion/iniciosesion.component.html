@@ -1,20 +1,20 @@
 <mat-card>
     <mat-card-title>Inicie Sesion</mat-card-title>
     <mat-card-content>
-        <form>
+        <form (ngSubmit)="onLogin()">
             <p>
                 <mat-form-field>
-                    <input type="text" matInput placeholder="Numero de documento">
+                    <input type="text" [(ngModel)]="numeroDocumento" matInput placeholder="Numero de documento">
                 </mat-form-field>
             </p>
             <p>
                 <mat-form-field>
-                    <input type="password" matInput placeholder="Constraseña">
+                    <input type="password" [(ngModel)]="contrasena" matInput placeholder="Constraseña">
                 </mat-form-field>
             </p>
             <button type="submit" mat-raised-button color="primary">Aceptar</button> |
 
-            <button type="submit" mat-raised-button color="primary">Cancelar</button>
+            <button mat-raised-button color="primary">Cancelar</button>
         </form>
     </mat-card-content>
     <div class="registrese-ahora" data uia="registrese-ahora">

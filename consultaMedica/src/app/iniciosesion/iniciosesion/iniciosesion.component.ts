@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Usuario } from 'src/app/core/models/usuario';
+import { UsuarioService } from '../../core/service/usuario.service';
 
 
 @Component({
@@ -8,10 +11,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IniciosesionComponent implements OnInit {
 
-  constructor() { }
+  numeroDocumento = '';
+  contrasena = '';
+
+  constructor(
+    private router: Router,
+    private servicio: UsuarioService
+  ) { }
 
   ngOnInit(): void {
   }
 
-
+  onLogin(){
+    const user = new Usuario(
+      'tipo Paciente',
+      this.numeroDocumento,
+      this.contrasena
+    );
+    this.servicio.guardar(user).subscribe(
+      data => {
+        alert(data);
+      }
+    );
+  }
 }

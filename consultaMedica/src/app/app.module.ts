@@ -31,6 +31,10 @@ import { OpcionservicioComponent } from './opcionservicio/opcionservicio/opcions
 import { RegistroComponent } from './registro/registro/registro.component';
 import { TipoafiliadoComponent } from './tipoafiliado/tipoafiliado/tipoafiliado.component';
 import {MatMenuModule} from '@angular/material/menu';
+import { MenumedicoComponent } from './menumedico/menumedico/menumedico.component';
+import { HorariomedicoComponent } from './horariomedico/horariomedico/horariomedico.component';
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -41,7 +45,9 @@ import {MatMenuModule} from '@angular/material/menu';
     CitaComponent,
     OpcionservicioComponent,
     RegistroComponent,
-    TipoafiliadoComponent
+    TipoafiliadoComponent,
+    MenumedicoComponent,
+    HorariomedicoComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,6 +73,9 @@ import {MatMenuModule} from '@angular/material/menu';
     MatDialogModule,
     MatExpansionModule,
     MatMenuModule,
+    HttpClientModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
