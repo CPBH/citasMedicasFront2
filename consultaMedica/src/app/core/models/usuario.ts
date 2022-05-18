@@ -1,11 +1,27 @@
 export class Usuario {
-    tipo!: string;
+    id!: number;
+    tipo: string;
+    tipoDocumento!: string;
     numeroDocumento!: string;
+    nombre!: string;
+    apellido!: string;
+    telefono: string;
+    email: string;
     contrasena!: string;
+    fechaNacimiento!: string;
+    eps!: string;
 
-    constructor(tipo: string, numeroDocumento: string, contrasena: string){
-        this.tipo = tipo;
-        this.numeroDocumento = numeroDocumento;
-        this.contrasena = contrasena;
-    }
+
+  constructor(tipo: string, tipoDocumento: string, numeroDocumento: string, nombre: string, apellido: string, telefono: string, contrasena: string, email: string, fechaNacimiento: string, eps: string) {
+    this.tipo = tipo;
+    this.tipoDocumento = tipoDocumento;
+    this.numeroDocumento = numeroDocumento;
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.telefono = telefono;
+    this.email = email;
+    this.contrasena = contrasena;
+    this.fechaNacimiento = fechaNacimiento;
+    this.eps = eps;
+  }
 }

@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Usuario } from 'src/app/core/models/usuario';
-import { UsuarioService } from '../../core/service/usuario.service';
-
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {UsuarioService} from '../../core/service/usuario.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-iniciosesion',
@@ -23,15 +22,25 @@ export class IniciosesionComponent implements OnInit {
   }
 
   onLogin(){
-    const user = new Usuario(
-      'tipo Paciente',
-      this.numeroDocumento,
-      this.contrasena
-    );
-    this.servicio.guardar(user).subscribe(
+    this.servicio.login(this.numeroDocumento,  this.contrasena).subscribe(
       data => {
-        alert(data);
-      }
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Autenticado con exito!!!',
+          showConfirmButton: false,
+          timer: 1500
+        });
+        localStorage.setItem('usuario', JSON.stringify(data[0]));
+        this.router.navigateByUrl("/opcionservicio");
+      }, error => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'Error al iniciar sesion!!',
+          footer: error.error.message
+        });
+    }
     );
   }
 }

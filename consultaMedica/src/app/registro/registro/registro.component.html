@@ -1,56 +1,74 @@
 <mat-card>
-    <mat-card-title>Registrarse</mat-card-title>
-    <mat-card-content>
-        <form>
-            <p>
-                <mat-form-field class="full-width myfield">
-                    <mat-label>Tipo de Documento*</mat-label>
-                    <select matNativeControl (ngModel)="tpdocumento" name="tpd">
-                  <option value="" selected></option>
-                  <option *ngFor="let item of tipodocumentos" [value]="item.codigo">
-                    {{item.descripcion}}
-                  </option>
-                </select>
-                </mat-form-field>
-            </p>
-            <p>
-                <mat-form-field>
-                    <input type="text" matInput placeholder="Numero de Documento">
-                </mat-form-field>
-            </p>
-            <p>
-                <mat-form-field>
-                    <input type="text" matInput placeholder="Nombre de usuario">
-                </mat-form-field>
-            </p>
-            <p>
-                <mat-form-field>
-                    <input type="password" matInput placeholder="Constraseña*">
-                </mat-form-field>
-            </p>
-            <p>
-                <mat-form-field appearance="fill">
-                    <mat-label>Fecha de nacimiento*</mat-label>
-                    <input matInput [matDatepicker]="picker">
-                    <mat-hint>MM/DD/YYYY</mat-hint>
-                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker>
-                </mat-form-field>
-            </p>
-            <p>
-                <mat-form-field class="full-width myfield">
-                    <mat-label>EPS</mat-label>
-                    <select matNativeControl (ngModel)="tpeps" name="tpep">
-                  <option value="" selected></option>
-                  <option *ngFor="let item of eps" [value]="item.codigo">
-                    {{item.descripcion}}
-                  </option>
-                </select>
-                </mat-form-field>
-            </p>
-            <button type="submit" mat-raised-button color="primary">Aceptar</button> |
+  <mat-card-title>Registrarse</mat-card-title>
+  <mat-card-content>
+    <form (ngSubmit)="onRegistre()" #f="ngForm">
+      <p>
+        <mat-form-field class="full-width myfield">
+          <mat-label>Tipo de Documento*</mat-label>
+          <select matNativeControl id="tipoDocumento" name="tipodocumento" [(ngModel)]="tipoDocumento">
+            <option value="" selected></option>
+            <option *ngFor="let item of tipodocumentos" [value]="item.descripcion" required>
+              {{item.descripcion}}
+            </option>
+          </select>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+          <input type="text" id="numeroDocumento" name="numeroDocumento" [(ngModel)]="numeroDocumento" matInput
+                 placeholder="Numero de Documento" required>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+          <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre" matInput placeholder="Nombre del paciente">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+          <input type="text" id="apellido" name="apellido" [(ngModel)]="apellido" matInput placeholder="Apellidos">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+          <input type="text" id="telefono" name="telefono" [(ngModel)]="telefono" matInput placeholder="Telefono">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+          <input type="email" id="email" name="email" [(ngModel)]="email" matInput placeholder="Email">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+          <input type="password" id="contrasena" name="contrasena" [(ngModel)]="contrasena" matInput
+                 placeholder="Contraseña" required>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="fill">
+          <mat-label>Fecha de nacimiento*</mat-label>
+          <input matInput id="fechaNacimiento" name="fechaNacimiento" [(ngModel)]="fechaNacimiento"
+                 [matDatepicker]="picker">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="full-width myfield">
+          <mat-label>EPS</mat-label>
+          <select matNativeControl id="eps" name="eps" [(ngModel)]="eps">
+            <option value="" selected></option>
+            <option name="eps" *ngFor="let item of listeps" [value]="item.descripcion">
+              {{item.descripcion}}
+            </option>
+          </select>
+        </mat-form-field>
+      </p>
+      <button type="submit" mat-raised-button color="primary" [disabled]="!f.valid">Aceptar</button>
 
-            <button type="submit" mat-raised-button color="primary">Cancelar</button>
-        </form>
-    </mat-card-content>
+      <button mat-raised-button routerLink="/login" color="primary">Cancelar</button>
+    </form>
+  </mat-card-content>
 </mat-card>

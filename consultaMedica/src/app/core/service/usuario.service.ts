@@ -9,7 +9,7 @@ import { Usuario } from '../models/usuario';
 })
 export class UsuarioService {
 
-  private URL: string = `${environment.API_URL}/usuarios`;
+  private URL: string = `${environment.API_URL}/api/v1/usuarios`;
 
   constructor(
     private httpClient: HttpClient
@@ -17,6 +17,10 @@ export class UsuarioService {
 
   public guardar(usuario: Usuario): Observable<any> {
     return this.httpClient.post<any>(this.URL, usuario);
+  }
+
+  public login(numeroDocumento: string, contrasena: string): Observable<any> {
+    return this.httpClient.get<Usuario>(this.URL+ `?numeroDocumento=${numeroDocumento}?contrasena=${contrasena}`);
   }
 
   public listar(): Observable<Usuario[]> {

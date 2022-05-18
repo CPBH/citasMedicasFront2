@@ -4,12 +4,12 @@
         <form (ngSubmit)="onLogin()">
             <p>
                 <mat-form-field>
-                    <input type="text" [(ngModel)]="numeroDocumento" matInput placeholder="Numero de documento">
+                    <input type="text" id="numeroDocumento" name="numeroDocumento" [(ngModel)]="numeroDocumento" matInput placeholder="Numero de documento">
                 </mat-form-field>
             </p>
             <p>
                 <mat-form-field>
-                    <input type="password" [(ngModel)]="contrasena" matInput placeholder="Constraseña">
+                    <input type="password" id="contrasena" name="contrasena" [(ngModel)]="contrasena" matInput placeholder="Constraseña">
                 </mat-form-field>
             </p>
             <button type="submit" mat-raised-button color="primary">Aceptar</button> |
