@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Usuario} from "../../core/models/usuario";
 import Swal from 'sweetalert2';
 import {UsuarioService} from "../../core/service/usuario.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -25,7 +26,8 @@ export class RegistroComponent implements OnInit {
   tpeps: epsEntity = {};
 
   constructor(
-    private service: UsuarioService
+    private service: UsuarioService,
+    private router: Router
   ) {
   }
 
@@ -70,6 +72,8 @@ export class RegistroComponent implements OnInit {
           showConfirmButton: false,
           timer: 1500
         })
+
+        this.router.navigate(["login"])
       }
     );
 

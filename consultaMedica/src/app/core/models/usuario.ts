@@ -12,7 +12,7 @@ export class Usuario {
     eps!: string;
 
 
-  constructor(tipo: string, tipoDocumento: string, numeroDocumento: string, nombre: string, apellido: string, telefono: string, contrasena: string, email: string, fechaNacimiento: string, eps: string) {
+  constructor(tipo: string, tipoDocumento: string, numeroDocumento: string, nombre: string, apellido: string, telefono: string, email: string, contrasena: string, fechaNacimiento: string, eps: string) {
     this.tipo = tipo;
     this.tipoDocumento = tipoDocumento;
     this.numeroDocumento = numeroDocumento;

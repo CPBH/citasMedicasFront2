@@ -13,7 +13,7 @@ import { TipoafiliadoComponent } from './tipoafiliado/tipoafiliado/tipoafiliado.
 
 const routes: Routes = [
   {
-    path: 'login', component: IniciosesionComponent
+    path: '', component: IniciosesionComponent
   },
   {
     path: 'menu', component: MenuComponent
