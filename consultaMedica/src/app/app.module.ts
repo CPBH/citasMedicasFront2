@@ -36,6 +36,9 @@ import { HorariomedicoComponent } from './horariomedico/horariomedico/horariomed
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { MenuadminComponent } from './menuadmin/menuadmin/menuadmin.component';
+import { ListapacienteComponent } from './listapaciente/listapaciente/listapaciente.component';
+import { ListamedicoComponent } from './listamedico/listamedico/listamedico.component';
 
 
 @NgModule({
@@ -50,6 +53,9 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     TipoafiliadoComponent,
     MenumedicoComponent,
     HorariomedicoComponent,
+    MenuadminComponent,
+    ListapacienteComponent,
+    ListamedicoComponent,
   ],
   imports: [
     BrowserModule,

@@ -2,21 +2,14 @@
     <button mat-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>
     <h1 mat-dialog-title>DataPrism</h1>
     <mat-menu #menu="matMenu">
-        <a routerLink="/login" routerLinkActive="active"><button mat-menu-item color="Black">Inicio sesion</button></a>
-        <a routerLink="/cita" routerLinkActive="active"><button mat-menu-item color="Black">Citas</button></a>
         <a routerLink="/consulta" routerLinkActive="active"><button mat-menu-item color="Black">Consulta</button></a>
-        <a routerLink="/singup" routerLinkActive="active"><button mat-menu-item color="Black">Registrarse</button></a>
         <a routerLink="/opcionservicio" routerLinkActive="active"><button mat-menu-item color="Black">Otros servicios</button></a>
         <a routerLink="/tipoafiliado" routerLinkActive="active"><button mat-menu-item color="Black">Afiliado</button></a>
         <a routerLink="/menumedico" routerLinkActive="active"><button mat-menu-item color="Black">Menu medico</button></a>
         <a routerLink="/horariomedico" routerLinkActive="active"><button mat-menu-item color="Black">Lista</button></a>
+        <a routerLink="/menuadmin" routerLinkActive="active"><button mat-menu-item color="Black">Menu admin</button></a>
+        <a routerLink="/listapaciente" routerLinkActive="active"><button mat-menu-item color="Black">Lista Paciente</button></a>
+        <a routerLink="/listamedico" routerLinkActive="active"><button mat-menu-item color="Black">Lista Medico</button></a>
+
     </mat-menu>
-  <div class="col-4">
-    <p>
-      <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style">
-        <mat-button-toggle value="login" href="http://localhost:4200/login" target="_blank">Inicie Sesion</mat-button-toggle>
-        <mat-button-toggle value="singup" href="http://localhost:4200/singup" target="_blank">Registrese</mat-button-toggle>
-      </mat-button-toggle-group>
-    </p>
-  </div>
 </mat-toolbar>

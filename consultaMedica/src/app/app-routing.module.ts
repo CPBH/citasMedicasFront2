@@ -9,6 +9,9 @@ import { MenumedicoComponent } from './menumedico/menumedico/menumedico.componen
 import { OpcionservicioComponent } from './opcionservicio/opcionservicio/opcionservicio.component';
 import { RegistroComponent } from './registro/registro/registro.component';
 import { TipoafiliadoComponent } from './tipoafiliado/tipoafiliado/tipoafiliado.component';
+import {MenuadminComponent} from "./menuadmin/menuadmin/menuadmin.component";
+import {ListapacienteComponent} from "./listapaciente/listapaciente/listapaciente.component";
+import {ListamedicoComponent} from "./listamedico/listamedico/listamedico.component";
 
 
 const routes: Routes = [
@@ -38,6 +41,15 @@ const routes: Routes = [
   },
   {
     path: 'horariomedico', component: HorariomedicoComponent
+  },
+  {
+    path: 'menuadmin', component: MenuadminComponent
+  },
+  {
+    path: 'listapaciente', component: ListapacienteComponent
+  },
+  {
+    path: 'listamedico', component: ListamedicoComponent
   },
   {
     path: '**', redirectTo: '', pathMatch: 'full'
