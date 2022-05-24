@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Usuario} from "../../core/models/usuario";
+import {Historia} from "../../core/models/historia";
 import Swal from 'sweetalert2';
 import {UsuarioService} from "../../core/service/usuario.service";
+import {HistoriaService} from "../../core/service/historia.service";
 import { Router } from '@angular/router';
 
 @Component({
@@ -27,6 +29,7 @@ export class RegistroComponent implements OnInit {
 
   constructor(
     private service: UsuarioService,
+    private serviceH: HistoriaService,
     private router: Router
   ) {
   }
@@ -62,7 +65,16 @@ export class RegistroComponent implements OnInit {
       this.contrasena,
       this.fechaNacimiento,
       this.eps
+    );    
+    const historia = new Historia(
+      this.numeroDocumento,
+      "",
+      "",
+      "",
+      "",
+      ""
     );
+    this.serviceH.guardar(historia);
     this.service.guardar(usuario).subscribe(
       data => {
         Swal.fire({
@@ -76,6 +88,8 @@ export class RegistroComponent implements OnInit {
         this.router.navigate(["login"])
       }
     );
+    //this.serviceH.guardar(historia);
+
 
   }
 }
