@@ -74,7 +74,7 @@ export class RegistroComponent implements OnInit {
       "",
       ""
     );
-    this.serviceH.guardar(historia);
+    
     this.service.guardar(usuario).subscribe(
       data => {
         Swal.fire({
@@ -88,7 +88,7 @@ export class RegistroComponent implements OnInit {
         this.router.navigate(["login"])
       }
     );
-    //this.serviceH.guardar(historia);
+    this.serviceH.guardar(historia).subscribe();
 
 
   }
