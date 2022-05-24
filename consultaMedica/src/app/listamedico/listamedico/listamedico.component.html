@@ -1,1 +1,27 @@
-<p>listamedico works!</p>
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!-- Position Column -->
+  <ng-container matColumnDef="numerodoc">
+    <mat-header-cell *matHeaderCellDef> No.Documento </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.numerodoc}} </mat-cell>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="nombre">
+    <mat-header-cell *matHeaderCellDef> Nombre/s Medico </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.nombre}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="apellido">
+    <mat-header-cell *matHeaderCellDef> apellido/s </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.apellido}} </mat-cell>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="titulo">
+    <mat-header-cell *matHeaderCellDef> Título </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.titulo}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
