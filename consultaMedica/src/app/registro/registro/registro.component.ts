@@ -65,7 +65,7 @@ export class RegistroComponent implements OnInit {
       this.contrasena,
       this.fechaNacimiento,
       this.eps
-    );    
+    );
     const historia = new Historia(
       this.numeroDocumento,
       "",
@@ -74,7 +74,7 @@ export class RegistroComponent implements OnInit {
       "",
       ""
     );
-    
+
     this.service.guardar(usuario).subscribe(
       data => {
         Swal.fire({
