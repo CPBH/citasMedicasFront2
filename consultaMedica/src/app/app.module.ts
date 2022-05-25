@@ -39,6 +39,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { MenuadminComponent } from './menuadmin/menuadmin/menuadmin.component';
 import { ListapacienteComponent } from './listapaciente/listapaciente/listapaciente.component';
 import { ListamedicoComponent } from './listamedico/listamedico/listamedico.component';
+import { LoginmedicoComponent } from './loginmedico/loginmedico/loginmedico.component';
 
 
 @NgModule({
@@ -56,6 +57,7 @@ import { ListamedicoComponent } from './listamedico/listamedico/listamedico.comp
     MenuadminComponent,
     ListapacienteComponent,
     ListamedicoComponent,
+    LoginmedicoComponent,
   ],
   imports: [
     BrowserModule,

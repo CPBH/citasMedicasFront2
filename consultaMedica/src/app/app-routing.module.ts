@@ -12,6 +12,7 @@ import { TipoafiliadoComponent } from './tipoafiliado/tipoafiliado/tipoafiliado.
 import {MenuadminComponent} from "./menuadmin/menuadmin/menuadmin.component";
 import {ListapacienteComponent} from "./listapaciente/listapaciente/listapaciente.component";
 import {ListamedicoComponent} from "./listamedico/listamedico/listamedico.component";
+import {LoginmedicoComponent} from "./loginmedico/loginmedico/loginmedico.component";
 
 
 const routes: Routes = [
@@ -50,6 +51,9 @@ const routes: Routes = [
   },
   {
     path: 'listamedico', component: ListamedicoComponent
+  },
+  {
+    path: 'loginmedico', component: LoginmedicoComponent
   },
   {
     path: '**', redirectTo: '', pathMatch: 'full'
