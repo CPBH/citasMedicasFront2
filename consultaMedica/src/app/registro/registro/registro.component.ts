@@ -74,12 +74,8 @@ export class RegistroComponent implements OnInit {
       "",
       ""
     );
-<<<<<<< Updated upstream
-
-=======
     
-    this.serviceH.guardar(historia);
->>>>>>> Stashed changes
+    
     this.service.guardar(usuario).subscribe(
       data => {
         Swal.fire({
