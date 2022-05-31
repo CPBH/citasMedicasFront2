@@ -26,8 +26,8 @@ export class ConsultaComponent implements OnInit {
   descripcion_tratamiento = '';
   descripcionOrden = '';
   margen_de_tiempo = '';
-  
-  
+
+
   constructor(
     private service: ConsultaService,
     private servicer: RecetaService,
@@ -35,7 +35,7 @@ export class ConsultaComponent implements OnInit {
     ) {}
 
   ngOnInit(): void {
-    
+
   }
   onGuardar() {
     const dato = localStorage.getItem('usuario');
