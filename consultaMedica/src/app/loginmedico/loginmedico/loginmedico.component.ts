@@ -13,14 +13,16 @@ export class LoginmedicoComponent implements OnInit {
   numeroDocumento = '';
   contrasena = '';
 
-  constructor() {
-    private router: Router,
-      private servicio: UsuarioService
+  constructor(private router: Router, private servicio: UsuarioService) {
+
   }
 
   ngOnInit(): void {
 
-    onLoginmedico()
+
+  }
+
+  onLoginmedico()
     {
       this.servicio.login(this.numeroDocumento, this.contrasena).subscribe(
         data => {
@@ -43,5 +45,6 @@ export class LoginmedicoComponent implements OnInit {
         }
       );
     }
-  }
+
 }
+
