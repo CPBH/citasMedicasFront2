@@ -13,12 +13,17 @@ export class LoginmedicoComponent implements OnInit {
   numeroDocumento = '';
   contrasena = '';
 
+<<<<<<< Updated upstream
   constructor(private router: Router, private servicio: UsuarioService) {
 
+=======
+  constructor() {
+>>>>>>> Stashed changes
   }
 
   ngOnInit(): void {
 
+<<<<<<< Updated upstream
 
   }
 
@@ -46,5 +51,8 @@ export class LoginmedicoComponent implements OnInit {
       );
     }
 
+=======
+  }
+>>>>>>> Stashed changes
 }
 
